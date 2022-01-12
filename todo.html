@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To do</title>
+
+  
+  <meta charset="utf-8">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.1/tailwind.min.css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link type="stylesheets" href="{{ url_for('static', filename='styles.css')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.4.1.min.js')}}"></script>
+  <link type="stylesheet" href="{{ url_for('static', filename='styles.css')}}"></link>
+  <link type="stylesheets" href="static/styles.css"></link>
+</head>
+<style>
+    body{
+        background-color: #EAEDF0;
+        
+    }
+    #adopt{
+        display:none;
+
+    }
+    .container{
+        background-color:white;
+    
+        border: 1px solid lightgrey;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding:2%;
+        box-shadow: 2px 2px 2px 2px lightgray;
+        
+
+
+    }
+    .mini{
+        margin-top:2%;
+        width:80%;    
+    }
+     
+    .center{
+        text-align: center;
+        width:100%;
+    }
+    h3{
+        text-align: center;
+        color:blue;
+        width:100%;
+    }
+    label{
+        color:gray;
+        font-size: 90%;
+        text-align:left;
+        width:100%;
+    }
+    .center{
+        width:100%;
+        text-align:center;
+        
+    }
+    .btn{
+        background-color:blue;
+        color:white;
+        width:50%;
+        margin-left: 54%;
+        border-radius: 30px;
+    }
+    nav{
+      padding:2%;
+
+    }
+    .left{
+      width:100%;
+      text-align: right;
+        margin-right:3%;
+    }
+    .right{
+      justify-items: right;
+      
+      align-items:right;
+    }
+    .m{
+        margin-top:3%;
+    }.nob{
+        border:0px solid white;
+        box-shadow:0px 0px white;
+        width:50%;
+    }#add{
+        display:block;
+        color:red;
+        border: 1px solid green;
+    }
+</style>
+<body id="body">
+    <nav class="navbar navbar-default">
+  
+        <span class="left">My Daily Check
+            <i  style="font-size: 90%;margin:1%;" class="fa fa-angle-down"></i> 
+            <i  style="margin-left: 2%;" class="fa fa-bars"></i></span>
+      
+      
+      </nav>
+        <div class="container">
+
+        <div class="row center" >
+            <label class="center"></label>
+        </div>
+        
+        <div class="row" id="heading">
+            <h3>On my Checklist </h3>
+        </div>
+        
+        <div class="row">
+            <label class="left" id="show" onclick="show()"><i class="fa fa-plus"></i>&nbsp; Add</label>
+            
+        </div>
+        
+        <div class="row">
+            <div class="container mini">
+                <div class="row"><h4  style="padding:4%">My Tasks</h4></div>
+
+                //Loop here
+                <div class="row" style="padding:0.2%;">
+                    <div class="col-12" style="border:2px solid lightgrey; padding : 10px ">
+                        <span>
+                            <input type="checkbox">
+                        </span>
+                     Project approval and Draft Preparation
+                 
+                     <span class="right" style="float:right">
+                         
+                        <a style="color:red"><i class="fa fa-trash"></i></a>
+
+                     </span>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row" id="adopt">
+            <div class="container nob">
+            <div class="row">
+                <div class="col-12 col-sm-11">
+                <h4>Add</h4></div>
+                <div class="col-12 col-sm">
+                    <i id="close" onclick="hide()" class="fa fa-close"></i>
+                </div>
+            </div>
+            
+		    <form method="POST">
+            
+			<div class="form-group">
+                <label class="control-label">To Do</label>
+				<input class="form-control" type="text" name="todo" placeholder="I need to do....." required>
+			</div>
+            <div class="form-group">
+                <div class="col-md-6">
+                <label class="control-label">Time</label>
+                <input type="time" class="form-date" type="text" name="time" required>
+            </div>
+			<div class="col-md-6">
+                <label class="control-label">Date</label>
+				<input type="date" class="form-date" type="text" name="date" required>
+			</div>
+        </div>
+            <div class="row left">
+            <button class="btn">
+                Add
+            </button></div>
+            </form>
+        </div>
+    </div>
+      </div>
+</body>
+<script type="text/javascript"> 
+    function show(){
+        var x = document.getElementById("adopt")
+        var y=document.getElementById("show")
+        console.log(x);
+               x.style.display = "block";
+                y.style.display= "none";
+
+                
+          }
+    
+    function hide(){
+        var x = document.getElementById("adopt")
+        var y=document.getElementById("show")
+        
+        console.log(y);
+                x.style.display = "none";
+                y.style.display="block";
+                document.getElementById('heading').style.display="block";
+    }
+
+    function deleteme(x){
+        console.log(x);
+        $.getJSON('http://127.0.0.1:5000/setup/chat' + '/del_m',{
+            post:x
+        },function(data){
+            var res=data.result
+            console.log(res);
+        }
+
+        )
+
+    }
+
+</script>
+
+</html>
