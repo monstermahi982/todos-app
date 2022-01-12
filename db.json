@@ -1,50 +1,90 @@
 {
-    "users" : [
-        {
-            "id": 1,
-            "name" : "mahesh gaikwad",
-            "email" : "mahesh@gmail.com",
-            "password" : 12345 
-        },
-        {
-            "id": 2,
-            "name" : "rohit babar",
-            "email" : "rohit@gmail.com",
-            "password" : 12345 
-        },
-        {
-            "id": 3,
-            "name" : "kunal gunjal",
-            "email" : "kunal@gmail.com",
-            "password" : 12345 
-        }
-    ],
-
-    "tasks" : [
-        {
-            "id" : 1,
-            "user_id" : 1,
-            "task" : "play game",
-            "status" : true
-        },
-        {
-            "id" : 2,
-            "user_id" : 1,
-            "task" : "take supplements",
-            "status" : true
-        },
-        {
-            "id" : 3,
-            "user_id" : 1,
-            "task" : "go gym",
-            "status" : false
-        },
-        {
-            "id" : 4,
-            "user_id" : 2,
-            "task" : "play game",
-            "status" : true
-        }
-    ]
-
-  }
+  "users": [
+    {
+      "id": 1,
+      "name": "mahesh gaikwad",
+      "email": "mahesh@gmail.com",
+      "password": 12345
+    },
+    {
+      "id": 2,
+      "name": "rohit babar",
+      "email": "rohit@gmail.com",
+      "password": 12345
+    },
+    {
+      "id": 3,
+      "name": "kunal gunjal",
+      "email": "kunal@gmail.com",
+      "password": 12345
+    },
+    {
+      "name": "mahesh updated",
+      "email": "update@gmail.com",
+      "password": "1231",
+      "id": 4
+    },
+    {
+      "name": "",
+      "email": {},
+      "password": {},
+      "id": 5
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "task": "play game",
+      "status": true
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "task": "take supplements",
+      "status": true
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "task": "go gym",
+      "status": false
+    },
+    {
+      "id": 4,
+      "user_id": 2,
+      "task": "play game",
+      "status": true
+    },
+    {
+      "task": {},
+      "status": false,
+      "user_id": 1,
+      "id": 5
+    },
+    {
+      "task": {},
+      "status": false,
+      "user_id": 1,
+      "id": 6
+    },
+    {
+      "task": "dsadasd",
+      "status": false,
+      "user_id": 1,
+      "id": 7
+    },
+    {
+      "task": "new task added",
+      "status": false,
+      "user_id": 1,
+      "id": 8
+    },
+    {
+      "task": "let add more new task",
+      "status": false,
+      "user_id": 1,
+      "id": 9
+    }
+  ]
+}
