@@ -1,0 +1,50 @@
+{
+    "users" : [
+        {
+            "id": 1,
+            "name" : "mahesh gaikwad",
+            "email" : "mahesh@gmail.com",
+            "password" : 12345 
+        },
+        {
+            "id": 2,
+            "name" : "rohit babar",
+            "email" : "rohit@gmail.com",
+            "password" : 12345 
+        },
+        {
+            "id": 3,
+            "name" : "kunal gunjal",
+            "email" : "kunal@gmail.com",
+            "password" : 12345 
+        }
+    ],
+
+    "tasks" : [
+        {
+            "id" : 1,
+            "user_id" : 1,
+            "task" : "play game",
+            "status" : true
+        },
+        {
+            "id" : 2,
+            "user_id" : 1,
+            "task" : "take supplements",
+            "status" : true
+        },
+        {
+            "id" : 3,
+            "user_id" : 1,
+            "task" : "go gym",
+            "status" : false
+        },
+        {
+            "id" : 4,
+            "user_id" : 2,
+            "task" : "play game",
+            "status" : true
+        }
+    ]
+
+  }
