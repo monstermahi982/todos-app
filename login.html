@@ -1,240 +1,273 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Create Profile</title>
-  <meta charset="utf-8">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.1/tailwind.min.css'>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet"/>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  
+<head>
+    <title>Create Profile</title>
+    <meta charset="utf-8">
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.1/tailwind.min.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link type="stylesheets" href="{{ url_for('static', filename='styles.css')}}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.4.1.min.js')}}"></script>
-  <link type="stylesheet" href="{{ url_for('static', filename='styles.css')}}"></link>
-  <link type="stylesheets" href="static/styles.css"></link>
+    <link type="stylesheets" href="{{ url_for('static', filename='styles.css')}}">
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.4.1.min.js')}}"></script>
+    <link type="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    </link>
+    <link type="stylesheets" href="static/styles.css">
+    </link> -->
 </head>
 <style>
-    body{
+    body {
         background-color: #EAEDF0;
-        
     }
-    #adopt{
-        display:none;
+
+    /* 
+
+    #adopt {
+        display: none;
 
     }
-    .container{
-        background-color:white;
-    
+
+    .container {
+        background-color: white;
+
         border: 1px solid lightgrey;
         align-items: center;
         justify-content: center;
         align-content: center;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        padding:2%;
+        padding: 2%;
         box-shadow: 2px 2px 2px 2px lightgray;
-        
+    }
 
+    #signin {
+        display: none;
+    }
 
+    #login {
+        display: block;
     }
-    #signin{
-        display:none;
+
+    .mini {
+        margin-top: 2%;
+        width: 50%;
     }
-    #login{
-        display:block;
-    }
-    .mini{
-        margin-top:2%;
-        width:50%;    
-    }
-     
-    .center{
+
+    .center {
         text-align: center;
-        width:100%;
+        width: 100%;
     }
-    h3{
+
+    h3 {
         text-align: center;
-        color:blue;
-        width:100%;
+        color: blue;
+        width: 100%;
     }
-    label{
-        color:gray;
+
+    label {
+        color: gray;
         font-size: 90%;
-        text-align:left;
-        width:100%;
+        text-align: left;
+        width: 100%;
     }
-    .center{
-        width:100%;
-        text-align:center;
-        
+
+    .center {
+        width: 100%;
+        text-align: center;
+
     }
-    .btn{
-        background-color:blue;
-        color:white;
-        width:100%;
+
+    .btn {
+        background-color: blue;
+        color: white;
+        width: 100%;
         margin-left: 30%;
         border-radius: 30px;
     }
-    .btn2{
-        color:white;
-        width:100%;
+
+    .btn2 {
+        color: white;
+        width: 100%;
         margin-left: 30%;
         border-radius: 30px;
         justify-content: center;
         text-align: center;
         padding: 7px;
-    
-         background-color: white;
-          color: blue
+
+        background-color: white;
+        color: blue
     }
-    nav{
-      padding:2%;
+
+    nav {
+        padding: 2%;
 
     }
-    .left{
-      width:100%;
-      text-align: right;
-        margin-right:3%;
+
+    .left {
+        width: 100%;
+        text-align: right;
+        margin-right: 3%;
     }
-    .right{
-      justify-items: right;
-      
-      align-items:right;
+
+    .right {
+        justify-items: right;
+
+        align-items: right;
     }
-    .m{
-        margin-top:3%;
-    }.nob{
-        border:0px solid white;
-        box-shadow:0px 0px white;
-        width:50%;
-    }#add{
-        display:block;
-        color:red;
+
+    .m {
+        margin-top: 3%;
+    }
+
+    .nob {
+        border: 0px solid white;
+        box-shadow: 0px 0px white;
+        width: 50%;
+    }
+
+    #add {
+        display: block;
+        color: red;
         border: 1px solid green;
+    } */
+
+    .container {
+        margin: 20px 100px;
+        padding: 0px 100px;
+    }
+
+    .heading {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .form-group {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .control-label {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 10px;
+        background-color: rgb(86, 86, 189);
+        color: white;
+    }
+
+    .btn2 {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .btn2:hover {
+        text-decoration: underline;
+    }
+
+    .border {
+        border: 2px solid black;
+
+    }
+
+    .form-control {
+        padding: 10px;
     }
 </style>
+
 <body id="body">
-    <nav class="navbar navbar-default">
-        <span class="left">The Todo App</span>
-    </nav>
-        <div class="container">
-
-        <div class="row center" >
-            <label class="center"></label>
+    <div class="container">
+        <!-- title code -->
+        <div class="heading">
+            <h3 style="text-align: center;">Join The App </h3>
         </div>
-        
-        <div class="row" id="heading">
-            <h3>Join The App </h3>
-        </div>
-        
-        <div class="row login" id="login">
-            <div class="container mini">
-                <div class="row"><h4  style="padding:4%">My Account</h4></div>
-                
 
+        <div class="login border" id="login" style="background-color: #fff;">
+            <div class="container">
+                <h4 style="text-align: center; font-size: 30px;">Login</h4>
                 <form method="POST">
-            
-            <div class="form-group">
-                <label class="control-label">Login</label>
-                <input class="form-control" type="text" name="id" placeholder="Enter id" >
-            </div>
-            <div class="form-group">
-                <label class="control-label">Password</label>
-                <input class="form-control" type="password" name="pass" placeholder="Enter passcode" >
-            </div>
-            <div class="row">
-                    <div class="col-md-4">
-                    <label class="btn2" onclick="showsignin()">
-                    Sign In
-                    </label>
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input class="form-control" type="text" id="login-email" placeholder="Enter Email">
                     </div>
-                    <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <input class="form-control" type="password" id="login-pass" placeholder="Enter Password">
+                    </div>
 
-                    <button class="btn">
-                    Submit
-                    </button>
+                    <div class="form-group">
+                        <label class="btn2" onclick="showsignin()">Sign In</label>
+                        <button class="btn" id="login-btn">Submit</button>
                     </div>
-            </form>
-                
+                </form>
             </div>
         </div>
 
 
-        
-        </div>
-    
-        <div class="row signin" id="signin">
-            <div class="container mini">
-                <div class="row"><h4  style="padding:4%">Create Account</h4></div>
-                
-
+        <div class="signin border" id="signin" style="background-color: #fff;">
+            <div class="container">
+                <h4 style="text-align: center; font-size: 30px;">Create Account</h4>
                 <form method="POST">
-
-            <div class="form-group">
-                <label class="control-label">Email</label>
-                <input class="form-control" type="email" name="email" placeholder="Enter email Id" >
-            </div>
-            
-            <div class="form-group">
-                <label class="control-label">UserId</label>
-                <input class="form-control" type="text" name="id" placeholder="Enter id" >
-            </div>
-            <div class="form-group">
-                <label class="control-label">Password</label>
-                <input class="form-control" type="password" name="pass" placeholder="Enter passcode" >
-            </div>
-            <div class="row">
-                    <div class="col-md-4">
-                    <label class="btn2" onclick="showlogin()">
-                    Log In
-                    </label>
+                    <div class="form-group">
+                        <label class="control-label">Name</label>
+                        <input class="form-control" type="text" name="email" id="reg-name" placeholder="Enter email Id">
                     </div>
-                    <div class="col-md-4">
 
-                    <button class="btn">
-                    Submit
-                    </button>
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input class="form-control" type="email" id="reg-email" placeholder="Enter id">
                     </div>
-            </form>
-                
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <input class="form-control" type="password" id="reg-pass" placeholder="Enter passcode">
+                    </div>
+                    <div class="form-group">
+                        <label class="btn2" onclick="showlogin()">Log In</label>
+                        <button class="btn" id="register-btn">Submit</button>
+                    </div>
+                </form>
+
             </div>
         </div>
-        
+
     </div>
-      </div>
+    </div>
 </body>
-<script type="text/javascript"> 
-    console.log("sctipt")
-
-    function showlogin(){
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./login.js"></script>
+<script src="./register.js"></script>
+<script type="text/javascript">
+    function showlogin() {
         console.log("hi")
         var x = document.getElementById("login")
-        var y=document.getElementById("signin")
+        var y = document.getElementById("signin")
         console.log(x);
-               x.style.display = "block";
-                y.style.display= "none";
-        }
-    
-    function showsignin(){
+        x.style.display = "block";
+        y.style.display = "none";
+    }
+
+    function showsignin() {
 
         console.log("hi")
         var y = document.getElementById("login")
-        var x=document.getElementById("signin")
+        var x = document.getElementById("signin")
         console.log(x);
-               x.style.display = "block";
-                y.style.display= "none";
-        }
-    
+        x.style.display = "block";
+        y.style.display = "none";
+    }
+
 </script>
 
 </html>
