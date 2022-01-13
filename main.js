@@ -1,86 +1,98 @@
-// dislay the data
+// checking session of user
+const userName = sessionStorage.getItem("name");
+const userId = sessionStorage.getItem("id")
+if (!userName || !userId) {
+    window.location.href = "file:///home/mahesh/housemonk/javascript/todo_app/login.html";
+}
 
-const ul = document.getElementById("tasks");
+
+// set user name
+const nameU = document.getElementById('user-name');
+nameU.innerText = userName
+
+// logout
+function logout() {
+    sessionStorage.clear();
+    window.location.reload()
+}
+
+
+// dislay the data
+const div = document.getElementById("tasks");
 
 async function getTasks() {
-    const data = await axios.get("http://localhost:3000/tasks?user_id=1")
+    const data = await axios.get(`http://localhost:3000/tasks?user_id=${userId}`)
+    // checking length
+    if (data.data.length === 0) {
+        div.innerHTML = ` <h3 style="text-align:center;">no task is there</h3> `;
+        return
+    }
     data.data.slice().reverse().forEach(function (data) {
-        var li = document.createElement('li');
-        var test = document.createTextNode(data.task);
-        li.append(test);
-        ul.appendChild(li);
+        if (data.status === true) {
+            var task = document.createElement('div');
+            task.innerHTML = `<div class="particular-task">
+                                <input type="checkbox" disabled checked id="task-check"">
+                                <div>
+                                    <label id="task-message" style="text-decoration: line-through;">${data.task}</label>
+                                    <label id="task-time">${data.time} time</label>
+                                </div>
+                                <button id="delete-task" onClick="deleteTask(${data.id})"">delete</button>
+                            </div>`
+            div.appendChild(task);
+        } else {
+            var task = document.createElement('div');
+            task.innerHTML = `<div class="particular-task">
+                                <input type="checkbox" id="task-check" onClick="taskComp(${data.id})">
+                                <div>
+                                    <label id="task-message">${data.task}</label>
+                                    <label id="task-time">${data.time} time</label>
+                                </div>
+                                <button id="delete-task" onClick="deleteTask(${data.id})">delete</button>
+                                </div>`
+            div.appendChild(task);
+        }
     })
 }
 
 // calling display task
 getTasks()
 
-// adding new user
-
-const button = document.getElementById("but");
-
-button.addEventListener('click', (e) => {
-    e.preventDefault();
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    console.log(name);
-    if (name === "" || email === "" || password === "") {
-        alert("somethibng is epyty");
-    }
-    addUser(name, email, password);
-})
-
-async function addUser(name, email, password) {
-    const data = await axios.post("http://localhost:3000/users", {
-        name, email, password
-    });
-    console.log(data);
-}
-
-// validating the user
-const loginButton = document.getElementById("login");
-
-loginButton.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    var email = document.getElementById('loginemail').value;
-    var password = document.getElementById('loginpassword').value;
-    validateUser(email, password);
-
-})
-
-async function validateUser(email, password) {
-    const data = await axios.get(`http://localhost:3000/users?email=${email}`);
-    console.log(data);
-    if (data.data.length === 0) {
-        alert("user not found");
-    } else {
-        if (data.data[0].password === password) {
-            alert("corrent user")
-        } else {
-            console.log("password is wrong");
-        }
-    }
-}
-
 // adding new task
 
 const taskBut = document.getElementById("taskBut");
-
 taskBut.addEventListener('click', async () => {
-    // alert()
-    var task = document.getElementById("task").value
-    addTasks(task);
-    // console.log(task)
-
+    var task = document.getElementById("task-input").value
+    var time = document.getElementById("time").value
+    if (task === "" || time === '') {
+        return;
+    }
+    addTasks(task, time);
 })
 
-async function addTasks(task) {
-
+async function addTasks(task, time) {
     await axios.post("http://localhost:3000/tasks", {
         task,
+        time,
         status: false,
-        user_id: 1
+        user_id: userId
     });
+    window.location.reload()
+}
+
+// delete task
+async function deleteTask(id) {
+    console.log(id);
+    await axios.delete(`http://localhost:3000/tasks/${id}`);
+    window.location.reload()
+}
+
+
+// complete task
+async function taskComp(id) {
+    const data = await axios.get(`http://localhost:3000/tasks/${id}`)
+    await axios.put(`http://localhost:3000/tasks/${id}`, {
+        ...data.data,
+        status: true
+    });
+    window.location.reload()
 }
