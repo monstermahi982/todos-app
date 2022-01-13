@@ -30,17 +30,10 @@
         background-color: #EAEDF0;
         
     }
-    #adopt{
-        display:none;
-
-    }
     .container{
         background-color:white;
     
         border: 1px solid lightgrey;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         padding:2%;
         box-shadow: 2px 2px 2px 2px lightgray;
@@ -58,7 +51,6 @@
         width:100%;
     }
     h3{
-        text-align: center;
         color:blue;
         width:100%;
     }
@@ -117,21 +109,33 @@
       </nav>
         <div class="container">
 
-        <div class="row center" >
-            <label class="center"></label>
-        </div>
         
         <div class="row" id="heading">
             <h3>On my Checklist </h3>
         </div>
-        
-        <div class="row">
-            <label class="left" id="show" onclick="show()"><i class="fa fa-plus"></i>&nbsp; Add</label>
+        <form method="POST">
+        <div class="form-row" >
+                        <div class="form-group col-md-8" > 
+                            <label class="control-label">To Do</label>
+                            <input class="form-control" type="text" name="todo" placeholder="I need to do....." required>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="control-label">Time</label>
+                            <input type="time" class="form-date" type="text" name="time" required>
+                        </div>
+
+                        <div class="col-md-2">
+                          <label><i class="fa fa-plus"></i>&nbsp; Add</label>
+                        </div>
+
             
         </div>
+        </form>
+        
+
         
         <div class="row">
-            <div class="container mini">
+            <div class="container">
                 <div class="row"><h4  style="padding:4%">My Tasks</h4></div>
 
                 //Loop here
@@ -154,39 +158,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="adopt">
-            <div class="container nob">
-            <div class="row">
-                <div class="col-12 col-sm-11">
-                <h4>Add</h4></div>
-                <div class="col-12 col-sm">
-                    <i id="close" onclick="hide()" class="fa fa-close"></i>
-                </div>
-            </div>
-            
-		    <form method="POST">
-            
-			<div class="form-group">
-                <label class="control-label">To Do</label>
-				<input class="form-control" type="text" name="todo" placeholder="I need to do....." required>
-			</div>
-            <div class="form-group">
-                <div class="col-md-6">
-                <label class="control-label">Time</label>
-                <input type="time" class="form-date" type="text" name="time" required>
-            </div>
-			<div class="col-md-6">
-                <label class="control-label">Date</label>
-				<input type="date" class="form-date" type="text" name="date" required>
-			</div>
-        </div>
-            <div class="row left">
-            <button class="btn">
-                Add
-            </button></div>
-            </form>
-        </div>
-    </div>
+        
       </div>
 </body>
 <script type="text/javascript"> 
