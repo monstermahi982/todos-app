@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo's App</title>
 </head>
 
 <body>
@@ -26,12 +26,33 @@
         }
 
         .particular-task {
-            border: 3px solid blue;
+            border: 3px solid rgb(43, 43, 194);
             border-radius: 10px;
             margin: 20px 100px;
             padding: 10px 10px;
             display: flex;
             justify-content: space-between;
+        }
+
+        .header {
+            padding: 0 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .count {
+            padding: 0 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task_count {
+            display: flex;
+            background-color: rgb(43, 43, 194);
+            margin: 0 10px;
+            padding: 1px 10px;
+            color: #fff;
         }
 
         #task-input {
@@ -94,6 +115,15 @@
             border-radius: 100px;
         }
 
+        #type_task {
+            border: none;
+            background-color: inherit;
+        }
+
+        #type_task:hover {
+            cursor: pointer;
+        }
+
         #title {
             text-align: center;
             font-size: 40px;
@@ -114,10 +144,25 @@
     <div class="container">
         <div class="user">
             <h4 id="user-name">Mahesh Gaikwad</h4>
+            <button type="button" id="type_task" onClick="group()">Group Tasks</button>
             <button type="button" id="logout" onClick="logout()">logout</button>
         </div>
         <div class="header">
             <h2 id="title">Todo's App</h2>
+            <div class="count">
+                <div class="task_count">
+                    <h6>Total</h6>
+                    <h3 id="total_task">25</h3>
+                </div>
+                <div class="task_count">
+                    <h6>Comp</h6>
+                    <h3 id="complete_task">25</h3>
+                </div>
+                <div class="task_count">
+                    <h6>Incomp</h6>
+                    <h3 id="incomplete_task">25</h3>
+                </div>
+            </div>
         </div>
         <div class="inp">
             <input type="text" placeholder="write new task" id="task-input">
@@ -125,12 +170,17 @@
             <button type="button" id="taskBut">Add</button>
         </div>
         <div class="tasks" id="tasks">
-            <div class="particular-task"></div>
+            <!-- <div class="particular-task"></div> -->
 
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="./main.js"></script>
+        <script>
+            function group() {
+                window.location.href = "file:///home/mahesh/housemonk/javascript/todo_app/group.html";
+            }
+        </script>
 </body>
 
 </html>
