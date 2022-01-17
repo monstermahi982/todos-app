@@ -19,8 +19,21 @@ function logout() {
 
 // dislay the data
 const div = document.getElementById("tasks");
+const total_task = document.getElementById("total_task");
+const compete_task = document.getElementById("complete_task");
+const incomplete_task = document.getElementById("incomplete_task");
 
 async function getTasks() {
+
+    const total_data = await axios.get(`http://localhost:3000/tasks?user_id=${userId}`);
+    total_task.innerText = `${total_data.data.length}`;
+
+    const comp_data = await axios.get(`http://localhost:3000/tasks?user_id=${userId}&status=true`);
+    compete_task.innerText = `${comp_data.data.length}`;
+
+    const incomp_data = await axios.get(`http://localhost:3000/tasks?user_id=${userId}&status=false`);
+    incomplete_task.innerText = `${incomp_data.data.length}`;
+
     const data = await axios.get(`http://localhost:3000/tasks?user_id=${userId}`)
     // checking length
     if (data.data.length === 0) {
