@@ -2,7 +2,7 @@
 const userName = sessionStorage.getItem("name");
 const userId = sessionStorage.getItem("id")
 if (!userName || !userId) {
-    window.location.href = "file:///home/mahesh/housemonk/javascript/todo_app/login.html";
+    window.location.href = "login.html";
 }
 
 

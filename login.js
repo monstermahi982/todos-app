@@ -20,7 +20,7 @@ async function validateUser(email, password) {
         if (data.data[0].password === password) {
             sessionStorage.setItem("name", data.data[0].name)
             sessionStorage.setItem("id", data.data[0].id)
-            window.location.href = "file:///home/mahesh/housemonk/javascript/todo_app/index.html";
+            window.location.href = "index.html";
         } else {
             console.log("password is wrong");
         }

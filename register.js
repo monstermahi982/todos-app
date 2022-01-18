@@ -20,5 +20,5 @@ async function addUser(name, email, password) {
     });
     sessionStorage.setItem("name", name)
     sessionStorage.setItem("id", data.data.id)
-    window.location.href = "file:///home/mahesh/housemonk/javascript/todo_app/index.html";
+    window.location.href = "index.html";
 }
