@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo's App</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            margin: 10px 50px;
+            padding: 10px 50px;
+        }
+
+        .inp {
+            display: flex;
+            justify-content: center;
+        }
+
+        .user {
+            display: flex;
+            justify-content: right;
+        }
+
+        .particular-task {
+            border: 3px solid rgb(43, 43, 194);
+            border-radius: 10px;
+            margin: 20px 100px;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header {
+            padding: 0 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .count {
+            padding: 0 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task_count {
+            display: flex;
+            width:140px;
+            border-radius: 20px;
+            
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: 300px;
+            background-color:darkblue;
+            opacity:0.8;
+
+            margin: 0 10px;
+            padding: 1px 4px;
+            color: #fff;
+        }
+
+        #task-input {
+            margin: 0 10px;
+            padding: 20px;
+            width: 50%;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        #time {
+            margin: 0 10px;
+            width: 15%;
+            padding: 17px;
+            border-radius: 10px;
+        }
+
+        #taskBut {
+            margin: 0 10px;
+            padding: 17px;
+            width: 15%;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: rgba(93, 93, 218, 0.487);
+        }
+
+        #button:hover {
+            margin: 0 10px;
+            border: 2px solid black;
+            padding: 17px;
+            width: 15%;
+            font-size: 20px;
+        }
+
+        #task-check {
+            height: 25px;
+            width: 25px;
+            margin-right: 20px;
+            background-color: #eee;
+        }
+
+        #task-message {
+            font-size: 30px;
+        }
+
+        #user-name {
+            text-transform: capitalize;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        #logout {
+            border: none;
+            background-color: inherit;
+        }
+
+        #logout:hover {
+            background-color: rgb(243, 35, 35);
+            border: 1px solid black;
+            border-radius: 100px;
+        }
+
+        #type_task {
+            border: none;
+            background-color: inherit;
+        }
+
+        #type_task:hover {
+            cursor: pointer;
+        }
+
+        #title {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        #delete-task {
+            background-color: rgb(240, 44, 44);
+            border-radius: 20px;
+        }
+
+        #task-time {
+            font-size: 15px;
+            margin-left: 5px;
+            color: rgb(43, 43, 194)
+        }
+    </style>
+
+    <div class="container">
+        <div class="user">
+            <h4 id="user-name">Mahesh Gaikwad</h4>
+            <button type="button" id="type_task" onClick="group()">Group Tasks</button>
+            <button type="button" id="logout" onClick="logout()">logout</button>
+        </div>
+        <div class="header">
+            <h2 id="title">Todo's App</h2>
+            <div class="count">
+                <div class="task_count">
+                    <h6>Total</h6>&nbsp;&nbsp;
+                    <h3 id="total_task">25</h3>
+                </div>
+                <div class="task_count">
+                    <h6>Completed</h6>&nbsp;&nbsp;
+                    <h3 id="complete_task">25</h3>
+                </div>
+                <div class="task_count">
+                    <h6>Incompleted</h6>&nbsp;&nbsp;
+                    <h3 id="incomplete_task">25</h3>
+                </div>
+            </div>
+        </div>
+        <div class="inp">
+            <input type="text" placeholder="write new task" id="task-input">
+            <input type="time" name="time" id="time">
+            <button type="button" id="taskBut">Add</button>
+        </div>
+        <div class="tasks" id="tasks">
+            <!-- <div class="particular-task"></div> -->
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./main.js"></script>
+        <script>
+            function group() {
+                window.location.href = "group.html";
+            }
+        </script>
+</body>
+
+</html>
